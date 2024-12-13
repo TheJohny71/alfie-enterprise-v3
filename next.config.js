@@ -5,7 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: '/alfie-enterprise-v3/',
+  assetPrefix: '/alfie-enterprise-v3',
   trailingSlash: true,
 }
 
