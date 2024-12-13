@@ -1,3 +1,4 @@
+// tailwind.config.ts
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -9,59 +10,46 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary Colors
+        // Primary
         background: '#F5F5F7',
-        accent: '#5E5CE6',
-        // Support Colors
-        gray: {
-          100: '#F5F5F7',
-          200: '#E5E5EA',
-          300: '#D1D1D6',
-          400: '#C7C7CC',
-          500: '#98989D',
-          600: '#636366',
-          700: '#48484A',
-          800: '#3A3A3C',
-          900: '#2C2C2E',
+        
+        // Accent
+        accent: {
+          DEFAULT: '#5E5CE6',
+          light: '#7A78FF',
+          dark: '#4744D9',
         },
-        // Semantic Colors
-        success: '#34C759',
-        warning: '#FF9F0A',
-        error: '#FF3B30',
-      },
-      fontSize: {
-        // Typography Scale from Phase 1
-        '4xs': ['12px', '1.5'],    // Body Scale
-        '3xs': ['13px', '1.5'],
-        '2xs': ['14px', '1.5'],
-        'xs': ['16px', '1.5'],
-        'sm': ['18px', '1.2'],     // Heading Scale
-        'base': ['20px', '1.2'],
-        'lg': ['24px', '1.2'],
-        'xl': ['32px', '1.2'],
-        '2xl': ['40px', '1.2'],
-      },
-      spacing: {
-        // Spacing System from Phase 1
-        '1': '4px',
-        '2': '8px',
-        '3': '12px',
-        '4': '16px',
-        '6': '24px',
-        '8': '32px',
-        '12': '48px',
-        '16': '64px',
-      },
-      maxWidth: {
-        container: '1440px',
+        
+        // Support grays
+        support: {
+          light: '#98989D',
+          medium: '#636366',
+          dark: '#48484A',
+        },
+        
+        // Semantic colors
+        semantic: {
+          success: '#34C759',
+          warning: '#FF9F0A',
+          error: '#FF3B30',
+        }
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['SF Pro Display', 'var(--font-inter)', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'SF Pro Display', 'system-ui', 'sans-serif'],
+      },
+      spacing: {
+        '4': '4px',
+        '8': '8px',
+        '12': '12px',
+        '16': '16px',
+        '24': '24px',
+        '32': '32px',
+        '48': '48px',
+        '64': '64px',
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
 }
 
 export default config
