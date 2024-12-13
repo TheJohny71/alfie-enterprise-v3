@@ -106,6 +106,14 @@ export default function DesignSystemPage() {
           </Card>
         </div>
       </section>
+
+      {/* Calendar */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold">Calendar</h2>
+        <div className="border rounded-lg p-6 bg-white">
+          <Calendar />
+        </div>
+      </section>
     </div>
   )
 }

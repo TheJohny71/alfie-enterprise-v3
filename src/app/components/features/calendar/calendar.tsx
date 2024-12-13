@@ -1,8 +1,8 @@
-// src/components/features/calendar/calendar.tsx
+// src/app/components/features/calendar/calendar.tsx
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 interface CalendarProps {
   mode?: 'month' | 'week' | 'day';
@@ -59,14 +59,14 @@ export function Calendar({ mode = 'month', className }: CalendarProps) {
           className={cn(
             "h-24 border border-gray-100 p-2 transition-colors",
             "hover:bg-gray-50",
-            "focus:outline-none focus:ring-2 focus:ring-[#5E5CE6] focus:ring-opacity-50",
-            isSelected && "bg-[#5E5CE6]/10 border-[#5E5CE6]/20",
+            "focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50",
+            isSelected && "bg-accent/10 border-accent/20",
             isToday && "font-semibold"
           )}
         >
           <span className={cn(
             "inline-flex h-6 w-6 items-center justify-center rounded-full",
-            isToday && "bg-[#5E5CE6]/10 text-[#5E5CE6]"
+            isToday && "bg-accent/10 text-accent"
           )}>
             {day}
           </span>
