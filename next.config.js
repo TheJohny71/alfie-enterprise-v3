@@ -5,8 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // This ensures assets are properly loaded in GitHub Pages
   assetPrefix: '/alfie-enterprise-v3/',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
