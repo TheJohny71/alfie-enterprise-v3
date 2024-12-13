@@ -1,4 +1,6 @@
 // src/app/components/features/calendar/calendar.tsx
+'use client'
+
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from "@/lib/utils";
