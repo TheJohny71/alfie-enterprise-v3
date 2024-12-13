@@ -1,7 +1,8 @@
 // src/app/design-system/page.tsx
-import { Button } from "../../../components/ui/button"
-import { Input } from "../../../components/ui/input"
-import { Card } from "../../../components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Card } from "@/components/ui/card"
+import { Calendar } from "@/components/features/calendar/calendar"
 
 export default function DesignSystemPage() {
   return (
