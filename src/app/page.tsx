@@ -35,16 +35,16 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F5F5F7]">
-      {/* Header with refined spacing */}
-      <header className="bg-white border-b border-gray-200">
-        <nav className="max-w-[1440px] mx-auto px-6 lg:px-12 h-16 flex justify-between items-center">
-          <div className="text-2xl font-semibold text-gray-900">
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="bg-white border-b border-support-light/20">
+        <nav className="container h-16 flex justify-between items-center">
+          <div className="text-2xl font-semibold text-support-dark">
             alfie
           </div>
           <div className="flex items-center gap-4">
             <button 
-              className="p-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded-lg"
+              className="p-2 text-support-medium hover:text-support-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded-lg"
               aria-label="Region Settings"
             >
               <Globe className="w-5 h-5" />
@@ -53,20 +53,20 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* Main content with gradient accent */}
-      <main className="max-w-[1440px] mx-auto px-6 lg:px-12 py-16">
-        {/* Hero section with enhanced typography */}
+      {/* Main content */}
+      <main className="container py-16">
+        {/* Hero section */}
         <div className="text-center mb-16 relative">
           <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent -z-10 rounded-3xl" />
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-support-dark mb-6 tracking-tight">
             Create moments for<br />what matters
           </h1>
-          <p className="text-xl text-gray-700 mb-8">
+          <p className="text-xl text-support-medium mb-8">
             When making time means being present
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <div className="relative group">
-              <button className="w-full sm:w-auto px-6 py-3 rounded-lg bg-accent text-white hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 transition-all duration-300">
+              <button className="w-full sm:w-auto px-6 py-3 rounded-lg bg-accent text-white hover:bg-accent-light focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 transition-all duration-300">
                 Sign in with SSO
               </button>
               <div className="hidden group-hover:flex absolute top-full mt-2 bg-white rounded-lg shadow-lg p-2 gap-2">
@@ -81,19 +81,19 @@ export default function Home() {
               </div>
             </div>
             <Link href="/design-system">
-              <button className="px-6 py-3 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-offset-2 transition-all duration-300">
+              <button className="px-6 py-3 rounded-lg border border-support-light/20 text-support-dark hover:bg-support-light/10 focus:outline-none focus:ring-2 focus:ring-support-light focus:ring-offset-2 transition-all duration-300">
                 View Design System
               </button>
             </Link>
           </div>
         </div>
 
-        {/* Feature grid with enhanced responsive design */}
+        {/* Feature grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl border border-gray-200 p-8 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-accent focus-within:ring-offset-2"
+              className="bg-white rounded-xl border border-support-light/20 p-8 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-accent focus-within:ring-offset-2"
               style={{
                 transform: `translateY(${index * 8}px)`,
                 opacity: 0,
@@ -103,13 +103,13 @@ export default function Home() {
               <div className="mb-6">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-medium text-gray-900 mb-4">
+              <h3 className="text-xl font-medium text-support-dark mb-4">
                 {feature.title}
               </h3>
-              <p className="text-gray-700 mb-4">
+              <p className="text-support-medium mb-4">
                 {feature.description}
               </p>
-              <p className="text-sm font-medium text-emerald-700">
+              <p className="text-sm font-medium text-semantic-success">
                 {feature.subtext}
               </p>
             </div>
@@ -117,10 +117,10 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Enhanced AI Assistant Button */}
+      {/* AI Assistant Button */}
       <button
         onClick={() => setAssistantVisible(!isAssistantVisible)}
-        className="fixed bottom-8 right-8 bg-white p-4 rounded-full border border-gray-200 shadow-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 transition-all duration-300 transform hover:scale-105"
+        className="fixed bottom-8 right-8 bg-white p-4 rounded-full border border-support-light/20 shadow-lg hover:bg-support-light/10 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 transition-all duration-300 transform hover:scale-105"
         aria-label="Open AI Assistant"
       >
         <MessageSquare className="w-6 h-6 text-accent" />
