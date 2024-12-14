@@ -47,6 +47,19 @@ const config: Config = {
         '48': '48px',
         '64': '64px',
       },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '24px',
+          lg: '48px',
+        },
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1440px', // Max width from design system
+        },
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
