@@ -9,6 +9,7 @@ export interface QuickAction {
   enterpriseRequired?: boolean;
 }
 
+// Add this interface for the FeatureCard
 export interface FeatureCardProps {
   Icon: LucideIcon;
   title: string;
