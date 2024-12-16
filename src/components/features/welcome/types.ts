@@ -21,7 +21,7 @@ export interface WelcomePageProps {
   isVisible?: boolean;
   showLanguage?: boolean;
   scrollY?: number;
-  preferReducedMotion?: boolean;
+  prefersReducedMotion?: boolean;
 }
 
 export interface FeatureCardProps extends Feature {
@@ -44,5 +44,5 @@ export interface IconProps {
 export interface AnimationConfig {
   delay?: number;
   duration?: number;
-  preferReducedMotion?: boolean;
+  prefersReducedMotion?: boolean;
 }
