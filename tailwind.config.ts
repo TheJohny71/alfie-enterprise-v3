@@ -2,6 +2,7 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
+  darkMode: ["class"],
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -11,13 +12,17 @@ const config: Config = {
     extend: {
       colors: {
         // Primary
-        background: '#F5F5F7',
+        background: {
+          DEFAULT: '#F5F5F7',
+          dark: '#0a0a0a'
+        },
         
         // Accent
         accent: {
           DEFAULT: '#5E5CE6',
           light: '#7A78FF',
           dark: '#4744D9',
+          foreground: '#FFFFFF',
         },
         
         // Support grays
@@ -32,10 +37,13 @@ const config: Config = {
           success: '#34C759',
           warning: '#FF9F0A',
           error: '#FF3B30',
-        }
+        },
+        
+        ring: 'hsl(var(--ring))',
+        'ring-offset': 'hsl(var(--ring-offset))',
       },
       fontFamily: {
-        sans: ['Inter', 'SF Pro Display', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       spacing: {
         '4': '4px',
@@ -57,7 +65,7 @@ const config: Config = {
           sm: '640px',
           md: '768px',
           lg: '1024px',
-          xl: '1440px', // Max width from design system
+          xl: '1440px',
         },
       },
     },

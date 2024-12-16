@@ -1,45 +1,43 @@
-// src/app/page.tsx
-import { Hero } from '@/components/features/welcome/hero';
-import { FeatureCard } from '@/components/features/welcome/feature-card';
-import { QuickActions } from '@/components/features/welcome/quick-actions';
-import { Calendar, Brain, Users, Shield } from 'lucide-react';
+import { Hero } from "@/components/features/welcome/hero";
+import { FeatureCard } from "@/components/features/welcome/feature-card";
+import { QuickActions } from "@/components/features/welcome/quick-actions";
+import { Calendar, Brain, Users, Shield } from "lucide-react";
 
 export default function WelcomePage() {
-  // Our features array defines the key capabilities of the platform
-  // Each feature is designed to highlight a specific aspect of the system
   const features = [
     {
       Icon: Calendar,
       title: "Smart Scheduling",
-      description: "Experience AI-powered leave management that adapts to your team's patterns and preferences, making scheduling effortless.",
-      tag: "Enterprise"
+      description:
+        "Experience AI-powered leave management that adapts to your team's patterns and preferences, making scheduling effortless.",
+      tag: "Enterprise",
     },
     {
       Icon: Brain,
       title: "Intelligent Insights",
-      description: "Gain valuable insights into leave patterns and team availability with our advanced analytics engine.",
-      tag: "New"
+      description:
+        "Gain valuable insights into leave patterns and team availability with our advanced analytics engine.",
+      tag: "New",
     },
     {
       Icon: Users,
       title: "Team Coordination",
-      description: "Foster better collaboration with transparent team calendars and automated conflict resolution.",
+      description:
+        "Foster better collaboration with transparent team calendars and automated conflict resolution.",
     },
     {
       Icon: Shield,
       title: "Enterprise Security",
-      description: "Rest easy with bank-grade security protocols and comprehensive compliance features.",
-      tag: "Enterprise"
-    }
+      description:
+        "Rest easy with bank-grade security protocols and comprehensive compliance features.",
+      tag: "Enterprise",
+    },
   ];
 
   return (
-    // The main container ensures proper spacing and background treatment
     <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
-      {/* Hero section sets the tone for the entire page */}
       <Hero />
-      
-      {/* Quick Actions provide immediate access to key functions */}
+
       <section className="py-16 px-4 md:py-24">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12">
@@ -54,7 +52,6 @@ export default function WelcomePage() {
         </div>
       </section>
 
-      {/* Features section showcases the platform's capabilities */}
       <section className="py-16 px-4 md:py-24 bg-gray-50 dark:bg-gray-800/50">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12">
@@ -65,7 +62,7 @@ export default function WelcomePage() {
               Discover how our enterprise-grade capabilities can transform your leave management experience.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-8">
             {features.map((feature, index) => (
               <FeatureCard key={index} {...feature} />
             ))}
@@ -73,7 +70,6 @@ export default function WelcomePage() {
         </div>
       </section>
 
-      {/* Call to Action section encourages user engagement */}
       <section className="py-16 px-4 md:py-24">
         <div className="container mx-auto max-w-7xl text-center">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
