@@ -1,6 +1,7 @@
-import { FC } from 'react'
-import type { FeatureCardProps } from './types'
-import { Card } from '@/components/ui/card'
+"use client";
+
+import { FC } from 'react';
+import type { FeatureCardProps } from './types';
 
 export const FeatureCard: FC<FeatureCardProps> = ({
   Icon,
@@ -8,32 +9,20 @@ export const FeatureCard: FC<FeatureCardProps> = ({
   description,
   tag
 }) => {
-  const baseCardClass = "p-6 transition-all duration-300 hover:-translate-y-1";
-  const backgroundClass = "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700";
-  const hoverClass = "hover:shadow-lg hover:border-purple-500/50";
-
   return (
-    <Card className={`${baseCardClass} ${backgroundClass} ${hoverClass}`}>
-      <div className="relative w-12 h-12 mb-4">
-        <div className="absolute inset-0 bg-gradient-to-b from-teal-500/10 to-purple-500/10 rounded-full" />
-        <div className="w-8 h-8 text-teal-600 dark:text-teal-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <Icon />
-        </div>
-      </div>
-
+    <div className="group rounded-lg p-6 border border-gray-800/50 bg-gray-800/30 backdrop-blur-sm hover:bg-gray-800/50 hover:border-teal-500/50 transition-all duration-300">
+      <Icon className="w-6 h-6 mb-4 text-teal-500 group-hover:scale-110 transition-transform duration-300" />
+      <h3 className="text-lg font-semibold text-white mb-2">
+        {title}
+      </h3>
+      <p className="text-sm mb-3 text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+        {description}
+      </p>
       {tag && (
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">
+        <span className="inline-block text-xs font-medium text-teal-500 group-hover:text-teal-400 transition-colors duration-300">
           {tag}
         </span>
       )}
-
-      <h3 className="text-xl font-semibold mt-4 mb-2 text-gray-900 dark:text-white">
-        {title}
-      </h3>
-
-      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-        {description}
-      </p>
-    </Card>
+    </div>
   );
 };
