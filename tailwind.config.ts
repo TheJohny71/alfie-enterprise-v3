@@ -3,6 +3,7 @@ import type { Config } from 'tailwindcss'
 const config: Config = {
   darkMode: ["class"],
   content: [
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -30,6 +31,29 @@ const config: Config = {
           400: '#9CA3AF',
           300: '#D1D5DB',
         },
+        background: {
+          DEFAULT: '#F5F5F7',
+          dark: '#0a0a0a'
+        },
+        accent: {
+          DEFAULT: '#5E5CE6',
+          light: '#7A78FF',
+          dark: '#4744D9',
+          foreground: '#FFFFFF',
+        },
+        support: {
+          light: '#98989D',
+          medium: '#636366',
+          dark: '#48484A',
+        },
+        semantic: {
+          success: '#34C759',
+          warning: '#FF9F0A',
+          error: '#FF3B30',
+        }
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       backdropBlur: {
         xs: '2px',
@@ -61,3 +85,5 @@ const config: Config = {
   },
   plugins: [require('tailwindcss-animate')],
 }
+
+export default config
