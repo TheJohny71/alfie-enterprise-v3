@@ -13,14 +13,14 @@ export default function WelcomePage() {
   const [showLanguage, setShowLanguage] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const heroRef = useRef(null);
+  const heroRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     // Check user's motion preferences
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     setPrefersReducedMotion(motionQuery.matches);
     
-    const handleMotionChange = (e) => setPrefersReducedMotion(e.matches);
+    const handleMotionChange = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
     motionQuery.addEventListener('change', handleMotionChange);
 
     // Initialize visibility
@@ -102,7 +102,7 @@ export default function WelcomePage() {
         </div>
       </header>
 
-      <main className="relative max-w-6xl mx-auto px-4" ref={heroRef}>
+      <main className="relative max-w-6xl mx-auto px-4">
         <div className="py-24">
           <Hero prefersReducedMotion={prefersReducedMotion} />
           <QuickActions />
