@@ -1,4 +1,3 @@
-// src/components/features/welcome/types.ts
 import { LucideIcon } from "lucide-react";
 
 export interface QuickAction {
@@ -18,6 +17,13 @@ export interface WelcomePageProps {
   isVisible?: boolean;
   showLanguage?: boolean;
   scrollY?: number;
+}
+
+export interface FeatureCardProps {
+  Icon: LucideIcon;
+  title: string;
+  description: string;
+  tag?: string;
 }
 
 export interface LanguageSelectorProps {
