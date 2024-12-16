@@ -46,14 +46,14 @@ export default function DesignSystemPage() {
             <p className="text-sm text-support-medium">Secondary Action</p>
           </div>
           <div className="space-y-2">
-            <Button variant="tertiary">Tertiary Button</Button>
+          <Button variant="secondary">Tertiary Button</Button>
             <p className="text-sm text-support-medium">Tertiary Action</p>
           </div>
         </div>
 
         <div className="flex flex-wrap gap-4">
           <Button size="sm">Small</Button>
-          <Button size="md">Medium</Button>
+          <Button size="default">Medium</Button>
           <Button size="lg">Large</Button>
         </div>
       </section>
