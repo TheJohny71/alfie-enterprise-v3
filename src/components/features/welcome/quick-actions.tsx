@@ -47,7 +47,7 @@ export const QuickActions: FC = () => {
       {actions.map((action, index) => (
         <Button
           key={index}
-          variant="outline"
+          variant="secondary"  // Changed from outline to secondary
           onClick={() => action.action()}
           className="flex flex-col items-center p-6 h-auto hover:border-purple-500 transition-all hover:-translate-y-1"
         >
