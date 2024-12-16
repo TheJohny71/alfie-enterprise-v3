@@ -1,7 +1,8 @@
-// src/components/features/welcome/quick-actions.tsx
+"use client"
+
 import { FC } from 'react';
 import { Clock, Users, Calendar, Settings } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from '@components/ui/button';
 import type { QuickAction } from './types';
 
 export const QuickActions: FC = () => {
@@ -47,17 +48,17 @@ export const QuickActions: FC = () => {
       {actions.map((action, index) => (
         <Button
           key={index}
-          variant="secondary"  // Changed from outline to secondary
-          onClick={() => action.action()}
+          variant="secondary"
+          onClick={action.action}
           className="flex flex-col items-center p-6 h-auto hover:border-purple-500 transition-all hover:-translate-y-1"
         >
-          <action.icon className="w-8 h-8 mb-3 text-teal-600 dark:text-teal-400" />
+          <action.icon className="w-8 h-8 mb-3 text-teal-600 dark:text-teal-400 text-center" />
           <span className="text-base font-semibold mb-2">{action.label}</span>
-          <span className="text-sm text-gray-500 dark:text-gray-400 text-center">
+          <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
             {action.description}
-          </span>
+          </p>
           {action.enterpriseRequired && (
-            <span className="mt-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-600 dark:bg-purple-900/30 dark:text-purple-300">
+            <span className="mt-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">
               Enterprise
             </span>
           )}
