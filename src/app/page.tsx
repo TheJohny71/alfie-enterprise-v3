@@ -5,7 +5,7 @@ import { Clock, Calendar, Users } from 'lucide-react';
 
 export default function WelcomePage() {
   return (
-    // Adding a main tag for better semantic HTML structure
+    // Using main tag for better semantic HTML and accessibility
     <main className="container mx-auto p-8 bg-enterprise-gray-dark text-enterprise-gray-text">
       {/* Hero Section */}
       <div className="text-center py-16 md:py-24">
@@ -15,22 +15,34 @@ export default function WelcomePage() {
         <p className="mt-4 text-enterprise-gray-text">
           Alfie is the ultimate leave management tool for your enterprise.
         </p>
-        {/* Adding role="button" for better accessibility */}
+        {/* Primary call-to-action button */}
         <Button variant="primary" className="mt-8" role="button">
           Get Started
         </Button>
       </div>
 
-      {/* Quick Actions Section */}
+      {/* Quick Actions Section - Updated with correct button variants */}
       <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
-        <Button variant="outline" className="border-enterprise-purple-medium">
-          <Clock className="mr-2" aria-hidden="true" /> Request Time Off
+        <Button 
+          variant="secondary" 
+          className="border border-enterprise-purple-medium hover:bg-enterprise-purple-medium/10"
+        >
+          <Clock className="mr-2" aria-hidden="true" /> 
+          Request Time Off
         </Button>
-        <Button variant="outline" className="border-enterprise-teal-bright">
-          <Calendar className="mr-2" aria-hidden="true" /> Team Calendar
+        <Button 
+          variant="secondary" 
+          className="border border-enterprise-teal-bright hover:bg-enterprise-teal-bright/10"
+        >
+          <Calendar className="mr-2" aria-hidden="true" /> 
+          Team Calendar
         </Button>
-        <Button variant="outline" className="border-enterprise-purple-light">
-          <Users className="mr-2" aria-hidden="true" /> Team Availability
+        <Button 
+          variant="secondary" 
+          className="border border-enterprise-purple-light hover:bg-enterprise-purple-light/10"
+        >
+          <Users className="mr-2" aria-hidden="true" /> 
+          Team Availability
         </Button>
       </div>
 
@@ -43,11 +55,11 @@ export default function WelcomePage() {
           <p className="text-enterprise-gray-text">
             Alfie&apos;s AI-powered scheduling tools ensure seamless leave management.
           </p>
-          <div className="flex items-center mt-4 text-enterprise-purple-light hover:text-enterprise-purple-medium transition-colors">
+          <div className="flex items-center mt-4 text-enterprise-purple-light cursor-pointer hover:text-enterprise-purple-medium transition-colors">
             Learn More <span className="ml-2" aria-hidden="true">→</span>
           </div>
         </Card>
-        {/* Add more feature cards here */}
+        {/* Additional feature cards can be added here following the same structure */}
       </div>
     </main>
   );
