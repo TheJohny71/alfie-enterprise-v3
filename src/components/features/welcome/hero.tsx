@@ -1,5 +1,5 @@
-import { FC } from 'react'
-import { Button } from '@components/ui/button'
+import { FC } from "react";
+import { Button } from "@/components/ui/button";
 
 export const Hero: FC = () => {
   return (
