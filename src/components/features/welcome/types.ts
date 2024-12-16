@@ -1,11 +1,11 @@
-// src/components/features/welcome/types.ts
 import { LucideIcon } from "lucide-react";
 
 export interface QuickAction {
   icon: LucideIcon;
   label: string;
   action?: () => Promise<void>;
-  ariaLabel: string;
+  ariaLabel?: string;
+  delay?: number;
 }
 
 export interface Feature {
@@ -13,27 +13,36 @@ export interface Feature {
   title: string;
   description: string;
   tag: string;
-  ariaLabel: string;
+  ariaLabel?: string;
+  delay?: number;
 }
 
 export interface WelcomePageProps {
   isVisible?: boolean;
   showLanguage?: boolean;
   scrollY?: number;
-  prefersReducedMotion?: boolean;
+  preferReducedMotion?: boolean;
 }
 
 export interface FeatureCardProps extends Feature {
-  delay?: number;
+  Icon: LucideIcon;
 }
 
 export interface LanguageSelectorProps {
   show: boolean;
   onToggle: () => void;
+  ariaLabel?: string;
 }
 
 export interface IconProps {
   icon: LucideIcon;
   className?: string;
-  strokeWidth?: number;
+  ariaLabel?: string;
+  animated?: boolean;
+}
+
+export interface AnimationConfig {
+  delay?: number;
+  duration?: number;
+  preferReducedMotion?: boolean;
 }
