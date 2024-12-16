@@ -9,27 +9,30 @@ export const FeatureCard: FC<FeatureCardProps> = ({
   description,
   tag
 }) => {
+  // We use a compound className structure for better organization and readability
+  const baseCardClass = "p-6 transition-all duration-300 hover:-translate-y-1";
+  const backgroundClass = "bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700";
+  const hoverClass = "hover:shadow-lg hover:border-purple-500/50";
+
   return (
-    <Card className="p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-      {/* Icon container with gradient background effect */}
-      <div className="mb-4 relative">
+    <Card className={`${baseCardClass} ${backgroundClass} ${hoverClass}`}>
+      {/* Icon container with subtle gradient background for visual interest */}
+      <div className="relative w-12 h-12 mb-4">
         <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-purple-500/10 rounded-full" />
-        <Icon className="w-8 h-8 text-teal-600 dark:text-teal-400 relative" />
+        <Icon className="w-8 h-8 text-teal-600 dark:text-teal-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
       </div>
       
       {/* Enterprise or New tag with enhanced styling */}
       {tag && (
-        <span className="inline-block px-3 py-1 text-xs font-medium text-purple-600 bg-purple-50 dark:text-purple-300 dark:bg-purple-900/30 rounded-full mb-3">
+        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">
           {tag}
         </span>
       )}
       
-      {/* Feature title with proper hierarchy */}
-      <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+      <h3 className="text-xl font-semibold mt-4 mb-2 text-gray-900 dark:text-white">
         {title}
       </h3>
       
-      {/* Feature description with improved readability */}
       <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
         {description}
       </p>
