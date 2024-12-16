@@ -4,15 +4,23 @@ import { LucideIcon } from "lucide-react";
 export interface QuickAction {
   icon: LucideIcon;
   label: string;
-  description: string;
-  action: () => Promise<void>;
-  enterpriseRequired?: boolean;
+  action?: () => Promise<void>;
 }
 
-// Add this interface for the FeatureCard
-export interface FeatureCardProps {
-  Icon: LucideIcon;
+export interface Feature {
+  icon: LucideIcon;
   title: string;
   description: string;
-  tag?: string;
+  tag: string;
+}
+
+export interface WelcomePageProps {
+  isVisible?: boolean;
+  showLanguage?: boolean;
+  scrollY?: number;
+}
+
+export interface LanguageSelectorProps {
+  show: boolean;
+  onToggle: () => void;
 }
