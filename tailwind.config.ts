@@ -1,4 +1,3 @@
-// tailwind.config.ts
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -11,66 +10,54 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary
-        background: {
-          DEFAULT: '#F5F5F7',
-          dark: '#0a0a0a'
+        // Primary Colors
+        teal: {
+          400: '#2DD4BF',
+          500: '#14B8A6',
+          600: '#0D9488',
+          700: '#0F766E',
         },
-        
-        // Accent
-        accent: {
-          DEFAULT: '#5E5CE6',
-          light: '#7A78FF',
-          dark: '#4744D9',
-          foreground: '#FFFFFF',
+        purple: {
+          500: '#8B5CF6',
+          600: '#6D5AE6',
+          900: '#5B21B6',
         },
-        
-        // Support grays
-        support: {
-          light: '#98989D',
-          medium: '#636366',
-          dark: '#48484A',
+        gray: {
+          950: '#030712',
+          900: '#111827',
+          800: '#1F2937',
+          700: '#374151',
+          400: '#9CA3AF',
+          300: '#D1D5DB',
         },
-        
-        // Semantic colors
-        semantic: {
-          success: '#34C759',
-          warning: '#FF9F0A',
-          error: '#FF3B30',
-        },
-        
-        ring: 'hsl(var(--ring))',
-        'ring-offset': 'hsl(var(--ring-offset))',
       },
-      fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-      },
-      spacing: {
-        '4': '4px',
-        '8': '8px',
-        '12': '12px',
-        '16': '16px',
-        '24': '24px',
-        '32': '32px',
-        '48': '48px',
-        '64': '64px',
+      backdropBlur: {
+        xs: '2px',
+        sm: '4px',
+        md: '8px',
+        lg: '12px',
+        xl: '16px',
+        '2xl': '24px',
+        '3xl': '32px',
       },
       container: {
         center: true,
         padding: {
-          DEFAULT: '24px',
-          lg: '48px',
+          DEFAULT: '1rem',
+          sm: '2rem',
+          lg: '4rem',
+          xl: '5rem',
+          '2xl': '6rem',
         },
         screens: {
           sm: '640px',
           md: '768px',
           lg: '1024px',
-          xl: '1440px',
+          xl: '1280px',
+          '2xl': '1536px',
         },
       },
     },
   },
   plugins: [require('tailwindcss-animate')],
 }
-
-export default config
