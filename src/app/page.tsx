@@ -70,9 +70,10 @@ export default function WelcomePage() {
           <QuickActions />
           <div className="grid md:grid-cols-3 gap-5">
             {features.map((feature, index) => (
-              <FeatureCard 
+              <FeatureCard
                 key={feature.title}
                 Icon={feature.icon}
+                icon={feature.icon}
                 title={feature.title}
                 description={feature.description}
                 tag={feature.tag}
