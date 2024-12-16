@@ -4,7 +4,14 @@ import { LucideIcon } from 'lucide-react';
 export interface QuickAction {
   icon: LucideIcon;
   label: string;
-  description: string;  // Adding the description field
+  description: string;
   action: () => Promise<void>;
   enterpriseRequired?: boolean;
+}
+
+export interface FeatureCardProps {
+  Icon: LucideIcon;
+  title: string;
+  description: string;
+  tag?: string;
 }
