@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { FC } from 'react';
-import { Clock, Users, Calendar, Settings } from 'lucide-react';
-import { Button } from '@components/ui/button';
-import type { QuickAction } from './types';
+import { FC } from "react";
+import { Clock, Users, Calendar, Settings } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import type { QuickAction } from "./types";
 
 export const QuickActions: FC = () => {
   const actions: QuickAction[] = [
@@ -13,7 +13,7 @@ export const QuickActions: FC = () => {
       description: "Plan your leave with smart suggestions",
       action: async () => {
         console.log("Request time off clicked");
-      }
+      },
     },
     {
       icon: Calendar,
@@ -22,7 +22,7 @@ export const QuickActions: FC = () => {
       action: async () => {
         console.log("View calendar clicked");
       },
-      enterpriseRequired: true
+      enterpriseRequired: true,
     },
     {
       icon: Users,
@@ -31,7 +31,7 @@ export const QuickActions: FC = () => {
       action: async () => {
         console.log("Team availability clicked");
       },
-      enterpriseRequired: true
+      enterpriseRequired: true,
     },
     {
       icon: Settings,
@@ -39,8 +39,8 @@ export const QuickActions: FC = () => {
       description: "Customize your workspace",
       action: async () => {
         console.log("Settings clicked");
-      }
-    }
+      },
+    },
   ];
 
   return (
