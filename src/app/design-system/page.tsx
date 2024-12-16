@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
-import { Calendar } from "@/app/components/features/calendar/calendar"
+import { Calendar } from "@/components/features/calendar/calendar"
 
 export default function DesignSystemPage() {
   return (

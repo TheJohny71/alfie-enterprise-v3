@@ -1,6 +1,5 @@
 import { FC } from 'react';
 
-// Hero component for the welcome page main section
 export const Hero: FC = () => {
   return (
     <section className="text-center py-16 md:py-24 bg-gradient-to-b from-purple-50 to-white dark:from-gray-900 dark:to-gray-800">
