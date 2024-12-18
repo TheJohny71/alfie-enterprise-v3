@@ -1,11 +1,13 @@
 import { LucideIcon } from "lucide-react";
 
+// Existing interfaces
 export interface QuickAction {
   icon: LucideIcon;
   label: string;
   action?: () => Promise<void>;
   ariaLabel?: string;
   delay?: number;
+  href?: string; // New optional property for navigation
 }
 
 export interface Feature {
@@ -45,4 +47,45 @@ export interface AnimationConfig {
   delay?: number;
   duration?: number;
   prefersReducedMotion?: boolean;
+}
+
+// New calendar-related interfaces
+export type CalendarView = 'personal' | 'team' | 'holiday';
+export type CalendarMode = 'month' | 'week' | 'day';
+
+export interface CalendarEvent {
+  id: string;
+  title: string;
+  start: Date;
+  end: Date;
+  type: 'leave' | 'holiday' | 'team-leave';
+  status?: 'approved' | 'pending' | 'rejected';
+  userId?: string;
+  description?: string;
+}
+
+export interface CalendarProps {
+  mode?: CalendarMode;
+  view?: CalendarView;
+  className?: string;
+  onEventClick?: (event: CalendarEvent) => void;
+  onDateSelect?: (date: Date) => void;
+}
+
+export interface LeaveRequest {
+  startDate: string;
+  endDate: string;
+  type: 'vacation' | 'sick' | 'personal';
+  reason: string;
+  userId: string;
+  status: 'pending' | 'approved' | 'rejected';
+  submittedAt: Date;
+}
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  avatar?: string;
+  leaves?: LeaveRequest[];
 }
