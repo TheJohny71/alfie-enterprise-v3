@@ -4,10 +4,10 @@ import { LucideIcon } from "lucide-react";
 export interface QuickAction {
   icon: LucideIcon;
   label: string;
-  action?: () => Promise<void>;
+  action: () => void;  // Updated to fix type error
   ariaLabel?: string;
   delay?: number;
-  href?: string; // New optional property for navigation
+  href?: string;
 }
 
 export interface Feature {
