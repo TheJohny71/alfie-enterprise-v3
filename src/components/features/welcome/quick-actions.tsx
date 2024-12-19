@@ -2,24 +2,30 @@
 
 import { FC } from "react";
 import { Clock, Users, Building2, ArrowRight } from "lucide-react";
+import { useRouter } from 'next/navigation';
 import type { QuickAction } from "./types";
 
 export const QuickActions: FC = () => {
+  const router = useRouter();
+
   const actions: QuickAction[] = [
     {
       icon: Clock,
       label: "Request Time Off",
-      ariaLabel: "Request Time Off Action"
+      ariaLabel: "Request Time Off Action",
+      action: () => router.push('/calendar?view=personal&action=request')
     },
     {
       icon: Users,
       label: "View Team Calendar",
-      ariaLabel: "View Team Calendar Action"
+      ariaLabel: "View Team Calendar Action",
+      action: () => router.push('/calendar?view=team')
     },
     {
       icon: Building2,
       label: "Check Holiday Calendar",
-      ariaLabel: "Check Holiday Calendar Action"
+      ariaLabel: "Check Holiday Calendar Action",
+      action: () => router.push('/calendar?view=holiday')
     }
   ];
 
@@ -28,6 +34,7 @@ export const QuickActions: FC = () => {
       {actions.map((action) => (
         <button 
           key={action.label}
+          onClick={action.action}
           className="group relative flex items-center justify-between p-4 rounded-lg border border-gray-800/50 bg-gray-800/30 backdrop-blur-sm hover:bg-gray-800/50 hover:border-purple-500/50 transition-all duration-300"
           aria-label={action.ariaLabel}
         >
