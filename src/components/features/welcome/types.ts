@@ -4,10 +4,10 @@ import { LucideIcon } from "lucide-react";
 export interface QuickAction {
   icon: LucideIcon;
   label: string;
-  action: () => void;  // Updated to fix type error
+  action: () => void;  // Updated to fix deployment issue
   ariaLabel?: string;
   delay?: number;
-  href?: string;
+  href?: string; // Optional property for navigation
 }
 
 export interface Feature {
@@ -49,7 +49,7 @@ export interface AnimationConfig {
   prefersReducedMotion?: boolean;
 }
 
-// New calendar-related interfaces
+// Calendar-related interfaces
 export type CalendarView = 'personal' | 'team' | 'holiday';
 export type CalendarMode = 'month' | 'week' | 'day';
 
