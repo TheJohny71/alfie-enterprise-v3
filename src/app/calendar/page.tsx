@@ -58,7 +58,7 @@ export default function CalendarPage() {
           <div className="p-6">
             <Calendar 
               mode="month" 
-              view={currentView}
+              className={currentView === 'team' ? 'team-view' : ''}
             />
           </div>
         </Card>
