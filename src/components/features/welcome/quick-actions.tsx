@@ -13,19 +13,19 @@ export const QuickActions: FC = () => {
       icon: Clock,
       label: "Request Time Off",
       ariaLabel: "Request Time Off Action",
-      action: () => router.push('/calendar?view=personal&action=request')
+      action: () => void router.push('/calendar?view=personal&action=request')
     },
     {
       icon: Users,
       label: "View Team Calendar",
       ariaLabel: "View Team Calendar Action",
-      action: () => router.push('/calendar?view=team')
+      action: () => void router.push('/calendar?view=team')
     },
     {
       icon: Building2,
       label: "Check Holiday Calendar",
       ariaLabel: "Check Holiday Calendar Action",
-      action: () => router.push('/calendar?view=holiday')
+      action: () => void router.push('/calendar?view=holiday')
     }
   ];
 
@@ -56,3 +56,5 @@ export const QuickActions: FC = () => {
     </div>
   );
 };
+
+export default QuickActions;
